@@ -1,0 +1,1487 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zorko Wardha | Food & Good Vibes</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --orange: #ff6b18;
+            --yellow: #ffbd39;
+            --dark: #111111;
+            --dark2: #1b1b1b;
+            --light: #f8f6f2;
+            --muted: #aaaaaa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: rgba(17,17,17,.95);
+            backdrop-filter: blur(12px);
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        .navbar-brand {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900;
+            font-size: 29px;
+            color: white !important;
+        }
+
+        .brand-orange {
+            color: var(--orange);
+        }
+
+        .navbar-nav .nav-link {
+            color: #eeeeee !important;
+            margin: 0 10px;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--orange) !important;
+        }
+
+        .btn-orange {
+            background: var(--orange);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .btn-orange:hover {
+            background: #e85a09;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255,107,24,.3);
+        }
+
+        .btn-outline-light {
+            border-radius: 50px;
+            padding: 12px 25px;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(90deg, #111111 5%, rgba(17,17,17,.96) 40%, rgba(17,17,17,.25) 100%),
+                url('https://images.unsplash.com/photo-1571091718767-18b5b1457atif?auto=format&fit=crop&w=1600&q=85');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            padding-top: 60px;
+            padding-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            color: var(--yellow);
+            background: rgba(255,107,24,.12);
+            border: 1px solid rgba(255,107,24,.4);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 13px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 90px);
+            line-height: 1.04;
+            font-weight: 900;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--orange);
+        }
+
+        .hero p {
+            max-width: 520px;
+            color: #cccccc;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            margin-top: 50px;
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat h3 {
+            color: var(--yellow);
+            font-size: 25px;
+            font-weight: 800;
+        }
+
+        .stat p {
+            font-size: 12px;
+            margin: 0;
+            color: #bbbbbb;
+        }
+
+        /* SECTION COMMON */
+        section {
+            padding: 90px 0;
+        }
+
+        .section-label {
+            color: var(--orange);
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(32px, 4vw, 50px);
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .section-desc {
+            color: var(--muted);
+            max-width: 600px;
+            line-height: 1.8;
+        }
+
+        /* MENU */
+        .menu-section {
+            background: var(--light);
+            color: #171717;
+        }
+
+        .menu-section .section-desc {
+            color: #777777;
+        }
+
+        .menu-filter {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 35px 0;
+        }
+
+        .filter-btn {
+            border: 1px solid #dddddd;
+            padding: 9px 20px;
+            border-radius: 50px;
+            background: white;
+            color: #222222;
+            font-size: 13px;
+            transition: .3s;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--orange);
+            border-color: var(--orange);
+            color: white;
+        }
+
+        .food-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            background: white;
+            height: 100%;
+            transition: .4s;
+            box-shadow: 0 8px 30px rgba(0,0,0,.06);
+        }
+
+        .food-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,.13);
+        }
+
+        .food-img {
+            height: 220px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .food-card .card-body {
+            padding: 22px;
+        }
+
+        .food-card h5 {
+            font-weight: 700;
+        }
+
+        .food-card p {
+            color: #777;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .food-tag {
+            background: #fff0e6;
+            color: var(--orange);
+            border-radius: 50px;
+            padding: 5px 10px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .food-price {
+            font-weight: 800;
+            color: var(--orange);
+            font-size: 18px;
+        }
+
+        /* OFFER */
+        .offer-section {
+            background: linear-gradient(135deg, #ff6b18, #ff9d27);
+            padding: 65px 0;
+        }
+
+        .offer-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .offer-box h2 {
+            font-size: clamp(30px, 4vw, 48px);
+            font-weight: 900;
+        }
+
+        .offer-box p {
+            margin: 0;
+            opacity: .9;
+        }
+
+        .offer-btn {
+            background: #111111;
+            color: white;
+            border-radius: 50px;
+            padding: 14px 28px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .offer-btn:hover {
+            background: white;
+            color: #111111;
+        }
+
+        /* ABOUT */
+        .about-img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 25px;
+        }
+
+        .about-text {
+            color: #bbbbbb;
+            line-height: 1.9;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 22px;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            flex-shrink: 0;
+            background: rgba(255,107,24,.13);
+            color: var(--orange);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .feature h5 {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .feature p {
+            font-size: 12px;
+            color: #999;
+            margin: 0;
+        }
+
+        /* GALLERY */
+        .gallery-section {
+            background: #191919;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 18px;
+            transition: .4s;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.03);
+            filter: brightness(1.1);
+        }
+
+        /* TESTIMONIALS */
+        .review-card {
+            background: var(--dark2);
+            padding: 30px;
+            border-radius: 20px;
+            height: 100%;
+            border: 1px solid rgba(255,255,255,.06);
+        }
+
+        .stars {
+            color: var(--yellow);
+            margin-bottom: 15px;
+        }
+
+        .review-card p {
+            color: #cccccc;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .review-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--orange);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+        }
+
+        .reviewer h6 {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .reviewer small {
+            color: #888;
+        }
+
+        /* CONTACT */
+        .contact-section {
+            background: var(--light);
+            color: #111;
+        }
+
+        .contact-section .section-desc {
+            color: #777;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            height: 100%;
+            box-shadow: 0 5px 25px rgba(0,0,0,.05);
+        }
+
+        .contact-icon {
+            width: 55px;
+            height: 55px;
+            background: #fff0e6;
+            color: var(--orange);
+            border-radius: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .contact-card h5 {
+            font-weight: 700;
+        }
+
+        .contact-card p {
+            color: #777;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .contact-card a {
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 350px;
+            border: 0;
+            border-radius: 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #090909;
+            padding: 60px 0 25px;
+        }
+
+        .footer-brand {
+            font-size: 32px;
+            font-weight: 900;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        footer p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        footer h5 {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #999;
+            text-decoration: none;
+            margin-bottom: 12px;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--orange);
+            padding-left: 5px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #222;
+            color: white;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            margin-right: 8px;
+            transition: .3s;
+        }
+
+        .social-link:hover {
+            background: var(--orange);
+            color: white;
+            transform: translateY(-4px);
+        }
+
+        .copyright {
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            color: #777;
+            font-size: 12px;
+        }
+
+        /* FLOATING WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #25D366;
+            color: white;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(37,211,102,.4);
+            transition: .3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+
+        /* SCROLL ANIMATION */
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: all .8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 80vh;
+                background-position: 60% center;
+            }
+
+            .hero h1 {
+                font-size: 49px;
+            }
+
+            .hero-stats {
+                gap: 25px;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .about-img {
+                height: 300px;
+                margin-bottom: 25px;
+            }
+
+            .gallery-img {
+                height: 200px;
+            }
+
+            .offer-box {
+                text-align: center;
+                justify-content: center;
+            }
+
+            .navbar-brand {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+
+        <a class="navbar-brand" href="#home">
+            ZORKO<span class="brand-orange">.</span>
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#menu">Menu</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">Gallery</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#reviews">Reviews</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+
+                <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                    <a href="https://wa.me/918007429753"
+                       class="btn btn-orange">
+                        Order Now <i class="bi bi-arrow-right"></i>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="container hero-content">
+
+        <div class="hero-badge">
+            <i class="bi bi-fire"></i>
+            GOOD FOOD. GOOD MOOD.
+        </div>
+
+        <h1>
+            BIG FLAVOUR.<br>
+            <span>ZERO BORING.</span>
+        </h1>
+
+        <p>
+            Craving something delicious? From cheesy bites to
+            juicy burgers and refreshing drinks, make every
+            moment a little more tasty with Zorko.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#menu" class="btn btn-orange">
+                Explore Menu <i class="bi bi-arrow-right"></i>
+            </a>
+
+            <a href="#about" class="btn btn-outline-light">
+                Discover Zorko
+            </a>
+
+        </div>
+
+        <div class="hero-stats">
+
+            <div class="stat">
+                <h3>Yummy</h3>
+                <p>Food & Flavours</p>
+            </div>
+
+            <div class="stat">
+                <h3>Fresh</h3>
+                <p>Made with care</p>
+            </div>
+
+            <div class="stat">
+                <h3>Fun</h3>
+                <p>Every food moment</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- MENU -->
+<section class="menu-section" id="menu">
+
+    <div class="container">
+
+        <div class="text-center reveal">
+            <div class="section-label">OUR MENU</div>
+            <h2 class="section-title">Cravings, Covered.</h2>
+            <p class="section-desc mx-auto">
+                Explore your favourites and discover your next
+                delicious obsession.
+            </p>
+        </div>
+
+        <!-- FILTER BUTTONS -->
+        <div class="menu-filter reveal">
+
+            <button class="filter-btn active" data-filter="all">
+                All Items
+            </button>
+
+            <button class="filter-btn" data-filter="burger">
+                Burgers
+            </button>
+
+            <button class="filter-btn" data-filter="pizza">
+                Pizza
+            </button>
+
+            <button class="filter-btn" data-filter="snacks">
+                Snacks
+            </button>
+
+            <button class="filter-btn" data-filter="drinks">
+                Drinks
+            </button>
+
+        </div>
+
+        <div class="row g-4" id="foodMenu">
+
+            <!-- BURGER -->
+            <div class="col-md-6 col-lg-4 menu-item burger reveal">
+                <div class="food-card">
+
+                    <img class="food-img"
+                    src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+                    alt="Delicious burger">
+
+                    <div class="card-body">
+                        <span class="food-tag">BESTSELLER</span>
+                        <h5 class="mt-3">Classic Burger</h5>
+                        <p>A delicious burger layered with fresh ingredients and flavour.</p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="food-price">Ask for Price</span>
+                            <a class="btn btn-orange btn-sm"
+                               href="https://wa.me/918007429753?text=Hi%20Zorko%2C%20I%20want%20to%20order%20Classic%20Burger">
+                                <i class="bi bi-bag"></i> Order
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PIZZA -->
+            <div class="col-md-6 col-lg-4 menu-item pizza reveal">
+                <div class="food-card">
+
+                    <img class="food-img"
+                    src="https://images.unsplash.com/photo- pizza-?auto=format&fit=crop&w=800&q=80"
+                    alt="Pizza">
+
+                    <div class="card-body">
+                        <span class="food-tag">CHEESY FAVOURITE</span>
+                        <h5 class="mt-3">Loaded Pizza</h5>
+                        <p>Cheese, flavour and toppings in every single bite.</p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="food-price">Ask for Price</span>
+                            <a class="btn btn-orange btn-sm"
+                               href="https://wa.me/918007429753?text=Hi%20Zorko%2C%20I%20want%20to%20order%20Pizza">
+                                <i class="bi bi-bag"></i> Order
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- FRIES -->
+            <div class="col-md-6 col-lg-4 menu-item snacks reveal">
+                <div class="food-card">
+
+                    <img class="food-img"
+                    src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=80"
+                    alt="French fries">
+
+                    <div class="card-body">
+                        <span class="food-tag">SNACK TIME</span>
+                        <h5 class="mt-3">Crispy French Fries</h5>
+                        <p>Golden, crispy and perfect for your snack cravings.</p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="food-price">Ask for Price</span>
+                            <a class="btn btn-orange btn-sm"
+                               href="https://wa.me/918007429753?text=Hi%20Zorko%2C%20I%20want%20to%20order%20French%20Fries">
+                                <i class="bi bi-bag"></i> Order
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- MOMOS -->
+            <div class="col-md-6 col-lg-4 menu-item snacks reveal">
+                <div class="food-card">
+
+                    <img class="food-img"
+                    src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80"
+                    alt="Momos">
+
+                    <div class="card-body">
+                        <span class="food-tag">SPICY & TASTY</span>
+                        <h5 class="mt-3">Momos</h5>
+                        <p>Delicious bites served with a flavourful dip.</p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="food-price">Ask for Price</span>
+                            <a class="btn btn-orange btn-sm"
+                               href="https://wa.me/918007429753?text=Hi%20Zorko%2C%20I%20want%20to%20order%20Momos">
+                                <i class="bi bi-bag"></i> Order
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SANDWICH -->
+            <div class="col-md-6 col-lg-4 menu-item snacks reveal">
+                <div class="food-card">
+
+                    <img class="food-img"
+                    src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=800&q=80"
+                    alt="Sandwich">
+
+                    <div class="card-body">
+                        <span class="food-tag">QUICK BITE</span>
+                        <h5 class="mt-3">Loaded Sandwich</h5>
+                        <p>A satisfying sandwich packed with delicious fillings.</p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="food-price">Ask for Price</span>
+                            <a class="btn btn-orange btn-sm"
+                               href="https://wa.me/918007429753?text=Hi%20Zorko%2C%20I%20want%20to%20order%20Sandwich">
+                                <i class="bi bi-bag"></i> Order
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- DRINK -->
+            <div class="col-md-6 col-lg-4 menu-item drinks reveal">
+                <div class="food-card">
+
+                    <img class="food-img"
+                    src="https://images.unsplash.com/photo-1513558161293-cdaf765edfd47?auto=format&fit=crop&w=800&q=80"
+                    alt="Cold refreshing drink">
+
+                    <div class="card-body">
+                        <span class="food-tag">REFRESH YOURSELF</span>
+                        <h5 class="mt-3">Refreshing Drinks</h5>
+                        <p>Cool sips and refreshing beverages for every mood.</p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="food-price">Ask for Price</span>
+                            <a class="btn btn-orange btn-sm"
+                               href="https://wa.me/918007429753?text=Hi%20Zorko%2C%20please%20share%20your%20drinks%20menu">
+                                <i class="bi bi-bag"></i> Order
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="https://wa.me/918007429753?text=Hi%20Zorko%2C%20please%20share%20your%20complete%20menu"
+               class="btn btn-orange">
+                View Complete Menu on WhatsApp
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- OFFER -->
+<section class="offer-section">
+
+    <div class="container">
+        <div class="offer-box">
+
+            <div>
+                <h2>Good Food. Great Moments.</h2>
+                <p>Bring your friends. Bring your cravings. Let's eat!</p>
+            </div>
+
+            <a href="https://wa.me/918007429753"
+               class="offer-btn">
+                Contact Zorko <i class="bi bi-arrow-right"></i>
+            </a>
+
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6 reveal">
+
+                <img class="about-img"
+                src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=85"
+                alt="Restaurant food and dining">
+
+            </div>
+
+            <div class="col-lg-6 reveal">
+
+                <div class="section-label">ABOUT ZORKO</div>
+
+                <h2 class="section-title">
+                    Food Is More Than Just Food.
+                </h2>
+
+                <p class="about-text">
+                    It's about sharing moments, enjoying great
+                    flavours and making memories with the people
+                    you love. Zorko brings together food,
+                    fun and good vibes.
+                </p>
+
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="bi bi-egg-fried"></i>
+                    </div>
+                    <div>
+                        <h5>Food for Every Craving</h5>
+                        <p>Explore a variety of delicious options.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="bi bi-heart"></i>
+                    </div>
+                    <div>
+                        <h5>Made for Food Lovers</h5>
+                        <p>A place for friends, families and foodies.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="bi bi-emoji-smile"></i>
+                    </div>
+                    <div>
+                        <h5>Good Vibes Always</h5>
+                        <p>Enjoy your favourite food and moments.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+
+    <div class="container">
+
+        <div class="text-center reveal">
+            <div class="section-label">FOOD GALLERY</div>
+            <h2 class="section-title">A Feast for Your Eyes.</h2>
+            <p class="section-desc mx-auto">
+                Good food deserves a little appreciation.
+            </p>
+        </div>
+
+        <div class="row g-4 mt-4">
+
+            <div class="col-md-4 reveal">
+                <img class="gallery-img"
+                src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"
+                alt="Burger">
+            </div>
+
+            <div class="col-md-4 reveal">
+                <img class="gallery-img"
+                src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80"
+                alt="Pizza">
+            </div>
+
+            <div class="col-md-4 reveal">
+                <img class="gallery-img"
+                src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=80"
+                alt="Fries">
+            </div>
+
+            <div class="col-md-4 reveal">
+                <img class="gallery-img"
+                src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=800&q=80"
+                alt="Sandwich">
+            </div>
+
+            <div class="col-md-4 reveal">
+                <img class="gallery-img"
+                src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80"
+                alt="Momos">
+            </div>
+
+            <div class="col-md-4 reveal">
+                <img class="gallery-img"
+                src="https://images.unsplash.com/photo-1513558161293-cdaf765edfd47?auto=format&fit=crop&w=800&q=80"
+                alt="Cold beverage">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- REVIEWS -->
+<section id="reviews">
+
+    <div class="container">
+
+        <div class="text-center reveal">
+            <div class="section-label">CUSTOMER LOVE</div>
+            <h2 class="section-title">Good Food, Happy People.</h2>
+            <p class="section-desc mx-auto">
+                Your feedback makes every experience better.
+            </p>
+        </div>
+
+        <div class="row g-4 mt-4">
+
+            <div class="col-md-4 reveal">
+                <div class="review-card">
+
+                    <div class="stars">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+
+                    <p>
+                        "Great food, good vibes and a perfect
+                        place to enjoy your favourite snacks."
+                    </p>
+
+                    <div class="reviewer">
+                        <div class="review-avatar">G</div>
+                        <div>
+                            <h6>Food Lover</h6>
+                            <small>Sample testimonial</small>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-4 reveal">
+                <div class="review-card">
+
+                    <div class="stars">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+
+                    <p>
+                        "So many choices for cravings. The food
+                        looks amazing and the experience is fun."
+                    </p>
+
+                    <div class="reviewer">
+                        <div class="review-avatar">F</div>
+                        <div>
+                            <h6>Happy Customer</h6>
+                            <small>Sample testimonial</small>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-4 reveal">
+                <div class="review-card">
+
+                    <div class="stars">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+
+                    <p>
+                        "A fun food destination for catching up
+                        with friends and enjoying delicious bites."
+                    </p>
+
+                    <div class="reviewer">
+                        <div class="review-avatar">Z</div>
+                        <div>
+                            <h6>Zorko Fan</h6>
+                            <small>Sample testimonial</small>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <p class="text-center mt-4" style="color:#888;font-size:12px;">
+            Demo testimonials – replace with genuine customer reviews before publishing.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+
+    <div class="container">
+
+        <div class="text-center reveal">
+            <div class="section-label">FIND US</div>
+            <h2 class="section-title">Come Hungry. Leave Happy.</h2>
+            <p class="section-desc mx-auto">
+                Visit us, call us or find us on the map.
+            </p>
+        </div>
+
+        <div class="row g-4 mt-4">
+
+            <!-- ADDRESS -->
+            <div class="col-md-4 reveal">
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        <i class="bi bi-geo-alt"></i>
+                    </div>
+
+                    <h5>Our Location</h5>
+
+                    <p>
+                        Bachelor Road, in front of South Indian Cafe,
+                        near Pawade Nursing Home, Sudampuri,
+                        Wardha, Maharashtra 442001.
+                    </p>
+
+                    <a target="_blank"
+                    href="https://www.google.com/maps/search/?api=1&query=Zorko+Wardha">
+                        Get Directions <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- PHONE -->
+            <div class="col-md-4 reveal">
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        <i class="bi bi-telephone"></i>
+                    </div>
+
+                    <h5>Call Us</h5>
+
+                    <p>
+                        Have questions about the menu or orders?
+                        Give us a call.
+                    </p>
+
+                    <a href="tel:+918007429753">
+                        +91 80074 29753
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- WHATSAPP -->
+            <div class="col-md-4 reveal">
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        <i class="bi bi-whatsapp"></i>
+                    </div>
+
+                    <h5>WhatsApp Us</h5>
+
+                    <p>
+                        Message us to ask about the menu,
+                        availability and ordering.
+                    </p>
+
+                    <a target="_blank"
+                    href="https://wa.me/918007429753">
+                        Chat on WhatsApp <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- MAP -->
+        <div class="mt-5 reveal">
+
+            <iframe
+                class="map-frame"
+                src="https://maps.google.com/maps?q=Zorko%20Wardha&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-lg-4">
+
+                <div class="footer-brand">
+                    ZORKO<span class="brand-orange">.</span>
+                </div>
+
+                <p class="mt-3">
+                    Big flavours, delicious moments and
+                    good vibes. Your food destination in Wardha.
+                </p>
+
+                <div class="mt-4">
+
+                    <a class="social-link" href="#">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a class="social-link" href="#">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a class="social-link" href="https://wa.me/918007429753">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-2 col-6">
+
+                <h5>Quick Links</h5>
+
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#menu">Our Menu</a>
+                    <a href="#about">About</a>
+                    <a href="#gallery">Gallery</a>
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-6">
+
+                <h5>Explore</h5>
+
+                <div class="footer-links">
+                    <a href="#reviews">Customer Reviews</a>
+                    <a href="#contact">Contact Us</a>
+                    <a href="#contact">Location</a>
+                    <a href="https://wa.me/918007429753">Order Now</a>
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <h5>Contact Information</h5>
+
+                <p>
+                    <i class="bi bi-telephone brand-orange"></i>
+                    +91 80074 29753
+                </p>
+
+                <p>
+                    <i class="bi bi-geo-alt brand-orange"></i>
+                    Wardha, Maharashtra
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Zorko Wardha. Website demo created for business presentation.
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/918007429753?text=Hi%20Zorko%2C%20I%20want%20to%20know%20more."
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+
+    <i class="bi bi-whatsapp"></i>
+
+</a>
+
+
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+    // MENU FILTER
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    filterButtons.forEach(button => {
+
+        button.addEventListener('click', () => {
+
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            const filter = button.getAttribute('data-filter');
+
+            menuItems.forEach(item => {
+
+                if (filter === 'all' || item.classList.contains(filter)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+
+            });
+
+        });
+
+    });
+
+
+    // SCROLL ANIMATION
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+
+        });
+
+    }, {
+        threshold: 0.12
+    });
+
+    revealElements.forEach(element => observer.observe(element));
+
+
+    // CLOSE MOBILE MENU AFTER CLICK
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+    navLinks.forEach(link => {
+
+        link.addEventListener('click', () => {
+
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+
+            if (navbarCollapse.classList.contains('show')) {
+
+                const collapse = bootstrap.Collapse.getInstance(navbarCollapse);
+
+                if (collapse) {
+                    collapse.hide();
+                }
+
+            }
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
